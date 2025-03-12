@@ -11,38 +11,36 @@
           href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
 <body>
+<div class="container">
     <h1>Blueprints</h1>
-    <label for="author">Author</label>
-    <input type="text" id="author" value="JohnConnor">
-    <button>Get blueprints</button>
 
-    <div class="container">
-        <div class="blueprints-list">
-            <h2>JohnConnor's blueprints:</h2>
-            <table>
-                <tr>
-                    <th>Blueprint name</th>
-                    <th>Number of points</th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <td>house</td>
-                    <td>233</td>
-                    <td><button>Open</button></td>
-                </tr>
-                <tr>
-                    <td>gear</td>
-                    <td>342</td>
-                    <td><button>Open</button></td>
-                </tr>
-            </table>
-            <h3>Total user points: 575</h3>
-        </div>
-        <div class="current-blueprint">
-            <h2>Current blueprint: house</h2>
-            <div class="blueprint-display">[Blueprint image]</div>
-        </div>
+    <div class="form-group">
+        <label for="author">Author:</label>
+        <input type="text" id="author" class="form-control" value="JohnConnor">
+        <button id="getBlueprintsBtn" class="btn btn-primary">Get blueprints</button>
     </div>
+
+    <div class="blueprints-list">
+        <h2 id="author-title">Blueprints:</h2>
+        <table id="blueprintTable" class="table">
+            <thead>
+            <tr>
+                <th>Blueprint name</th>
+                <th>Number of points</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <h3 id="totalPoints">Total user points: 0</h3>
+    </div>
+
+    <div class="current-blueprint">
+        <h2>Current blueprint: <span id="currentBlueprintName">None</span></h2>
+        <div class="blueprint-display">[Blueprint image]</div>
+    </div>
+</div>
 
     <script src="js/apimock.js"></script>
     <script src="js/app.js"></script>
